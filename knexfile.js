@@ -3,13 +3,16 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+require("dotenv").config();
+
 module.exports = {
   development: {
     client: "pg",
     connection: {
       database: "dogear_db",
-      user: "postgres",
-      password: "Password!",
+      user: process.env.LOCAL_DB_USER,
+      password: process.env.LOCAL_DB_PASSWORD,
     },
     migrations: {
       directory: "./database/migrations",
