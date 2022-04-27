@@ -95,8 +95,8 @@ exports.up = function (knex) {
         .onDelete("RESTRICT")
         .onUpdate("CASCADE")
         .notNullable();
-      table.integer("checkpoint_num");
-      table.string("description");
+      table.integer("checkpoint_num").notNullable();
+      table.string("description").notNullable();
       table.timestamps(true, true);
     });
 };
@@ -107,6 +107,7 @@ exports.up = function (knex) {
  */
 exports.down = function (knex) {
   return knex.schema
+    .dropTable("book_instance_checkpoint")
     .dropTable("user_checkpoint")
     .dropTable("user_to_club")
     .dropTable("liked_comments")
