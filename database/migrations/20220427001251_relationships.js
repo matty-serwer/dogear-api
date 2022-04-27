@@ -84,6 +84,20 @@ exports.up = function (knex) {
         .notNullable();
       table.integer("checkpoint");
       table.timestamps(true, true);
+    })
+    .createTable("book_instance_checkpoint", (table) => {
+      table.increments();
+      table
+        .integer("book_instance_id")
+        .unsigned()
+        .references("id")
+        .inTable("book_instance")
+        .onDelete("RESTRICT")
+        .onUpdate("CASCADE")
+        .notNullable();
+      table.integer("checkpoint_num");
+      table.string("description");
+      table.timestamps(true, true);
     });
 };
 

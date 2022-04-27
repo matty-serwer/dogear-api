@@ -20,7 +20,7 @@ exports.up = function (knex) {
       table.string("description");
       table.integer("num_members").defaultTo(0);
       table.date("sprint_start");
-      table.date("spring_end");
+      table.date("sprint_end");
       table.timestamps(true, true);
     })
     .createTable("book_instance", (table) => {
@@ -39,6 +39,7 @@ exports.up = function (knex) {
       table.string("image_url");
       table.string("status").defaultTo("in_queue"); // closed / active / in_queue
       table.integer("queue_number");
+      table.integer("num_checkpoints");
       table.timestamps(true, true);
     });
 };

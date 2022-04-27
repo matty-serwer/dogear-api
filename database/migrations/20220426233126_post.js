@@ -43,7 +43,7 @@ exports.up = function (knex) {
       table.increments();
       table.string("content").notNullable();
       table
-        .string("user_id")
+        .string("author_id")
         .references("id")
         .inTable("users")
         .onDelete("RESTRICT")
