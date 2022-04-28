@@ -14,8 +14,8 @@ exports.seed = async function (knex) {
       description:
         "Here at the Awesome Books club, we read all kinds of books! But particularly, we love books involving time travelling romances that were converted into movies starring Rachel McAdams.",
       num_members: 3,
-      sprint_start: 2022 - 04 - 25,
-      sprint_end: 2022 - 05 - 10,
+      sprint_start: "2022-04-25",
+      sprint_end: "2022-05-10",
     }, // 1
     {
       name: "The Fitzgeralds",
@@ -24,8 +24,8 @@ exports.seed = async function (knex) {
       description:
         "The Fitzgeralds book club will be focussing on classic Americal literature, particularly from the modern era.",
       num_members: 2,
-      sprint_start: 2022 - 04 - 28,
-      sprint_end: 2022 - 05 - 15,
+      sprint_start: "2022-04-28",
+      sprint_end: "2022-05-15",
     },
   ]);
 };
