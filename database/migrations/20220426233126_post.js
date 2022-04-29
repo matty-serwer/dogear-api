@@ -11,13 +11,13 @@ exports.up = function (knex) {
     .createTable("posts", (table) => {
       table.increments();
       table
-        .integer("post_type") // 0 / 1
+        .integer("post_type") // 1 / 2
         .unsigned()
         .references("id")
         .inTable("post_types")
         .onDelete("RESTRICT")
         .onUpdate("CASCADE")
-        .defaultTo(0);
+        .defaultTo(1);
       table.string("topic").notNullable();
       table.string("content").notNullable();
       table

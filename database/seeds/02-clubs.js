@@ -26,6 +26,6 @@ exports.seed = async function (knex) {
       num_members: 2,
       sprint_start: "2022-04-28",
       sprint_end: "2022-05-15",
-    },
+    }, // 2
   ]);
 };
